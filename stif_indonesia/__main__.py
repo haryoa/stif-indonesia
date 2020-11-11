@@ -4,17 +4,17 @@ from .logging import CustomLogger
 
 
 sup_experiments = [
-    'experiment-config/00001_supervised_config.json'
+    'experiment-config/00001_default_supervised_config.json'
 ]
 
 
 experiment_semi_supervised = [
-    'experiment-config/00002_semi_supervised_config.json',
+    'experiment-config/00002_default_semi_supervised_config.json',
 ]
 
 
 def do_experiment(exp):
-    moses_model = MosesSMTModel(exp)
+    moses_model = MosesSMTModel(exp, use_wandb=False)
     moses_model.run_experiments()
 
 def do_semi_supervised_experiment(exp):
@@ -28,7 +28,7 @@ def main(exp_scenario: str):
     """
     To customize your needs, add your experiment config and put it to the 'sup_experiments' or 'experiment_semi_supervised'
     """
-    CustomLogger().create_logger('moses-rerun', alay=True)
+    CustomLogger().create_logger('moses-rerun', log_file='log.log', alay=True)
     if exp_scenario == 'supervised':
         for exp in sup_experiments:
             do_experiment(exp)

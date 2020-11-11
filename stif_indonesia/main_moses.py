@@ -3,19 +3,22 @@ from .util import read_json_file
 from pathlib import Path
 import logging
 import os
-import wandb
+try:
+    import wandb
+except:
+    pass
 from typing import Union
 import shutil
 from tqdm import tqdm
 
 
-MOSES_IMPLZ = 'moses/bin/lmplz'
-MOSES_BUILD_BINARY = 'moses/bin/build_binary'
-MOSES_TRAIN_PERL = 'moses/scripts/training/train-model.perl'
-EXTERNAL_BIN = 'moses/tools'
-MOSES_BIN_MOSES = 'moses/bin/moses'
+MOSES_IMPLZ = 'moses/moses/bin/lmplz'
+MOSES_BUILD_BINARY = 'moses/moses/bin/build_binary'
+MOSES_TRAIN_PERL = 'moses/moses/scripts/training/train-model.perl'
+EXTERNAL_BIN = 'moses/training-tools'
+MOSES_BIN_MOSES = 'moses/moses/bin/moses'
 logger = logging.getLogger("moses-rerun")
-MOSES_DETOKENIZER = "moses/scripts/tokenizer/detokenizer.perl"
+MOSES_DETOKENIZER = "moses/moses/scripts/tokenizer/detokenizer.perl"
 
 
 class MosesSMTModel:
@@ -74,7 +77,7 @@ class MosesSMTModel:
                         -reordering {self.hparams['moses_args']['reordering']} \
                         -lm 0:{self.hparams['moses_args']['moses_ngram']}:{ absolute_lm_path } \
                         -core {self.hparams['moses_args']['core_cpu']} \
-                        -external-bin-dir {EXTERNAL_BIN}"
+                        -external-bin-dir {EXTERNAL_BIN} --mgiza"
                         ], capture_output=True, shell=True)
         logger.info("Finish Training")
 
