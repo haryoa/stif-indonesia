@@ -1,18 +1,28 @@
 # STIF-Indonesia
 
-Implementation of "Semi-Supervised Low-Resource Style Transfer of Indonesian Informal to Formal Language with Iterative Forward-Translation".
+![Paper](imgs/meme_stif.PNG)
 
-We improve the data where it is different than the data published in the paper. We expect you to find a different result.
+Implementation of "Semi-Supervised Low-Resource Style Transfer of Indonesian Informal to Formal Language with Iterative Forward-Translation"
 
-To be announced, please wait!
+We improve the data where it is different than the data published in the paper. We expect you to find a different result when you run the code.
+
+## Description
+
+We were researching transforming a sentence from informal to its formal form. Our work addresses a style-transfer from informal to formal  Indonesian as a low-resource **machine translation**  problem. We benchmark several strategies to perform the style transfer.
+
+In this repository, we provide the Phrase-Based Statistical Machine Translation, which has the highest result in our experiment.
 
 ## Paper
 
-Semi-Supervised Low-Resource Style Transfer of Indonesian Informal to Formal Language with Iterative Forward-Translation (IALP 2020)
+![Paper](imgs/paper.PNG)
+
+You can access our paper below:
+
+[Semi-Supervised Low-Resource Style Transfer of Indonesian Informal to Formal Language with Iterative Forward-Translation (IALP 2020)](https://arxiv.org/abs/2011.03286v1)
 
 ## Requirements
 
-we use the Ubuntu 17.04+ Moses which only works on the specified OS.
+We use the RELEASE 4.0 Ubuntu 17.04+ version which only works on the specified OS.
 
 If you use other moses, please change the `scripts/download_moses.sh`
 
@@ -26,7 +36,7 @@ to
 curl [OTHER MOSES URL] -o moses.tgz
 ```
 
-In this experiment, we wrap the MOSES code by using Python's `subprocess`. So a python installation is necessary. The system is tested on Python 3.9. We recommend it to install with `miniconda`. You can install it by following this link: https://docs.conda.io/en/latest/miniconda.html
+In this experiment, we wrap the MOSES code by using Python's `subprocess`. So Python installation is necessary. The system is tested on Python 3.9. We recommend it to install with `miniconda`. You can install it by following this link: https://docs.conda.io/en/latest/miniconda.html
 
 ## How To Run
 
@@ -81,9 +91,21 @@ It will output `agg_data`, `best_model_dir`, and `produced_tgt_data`. `agg_data`
 
 Please check the `log.log` file which is the output of the process. 
 
-## TODO Write
+## Additional Information
 
-1. Link to arxiv + short description
-2. Acknowledgement
-3. Team
+If you want to replicate the dictionary-based method, you can use any informal - formal or slang dictionary in the internet.
 
+For example, you can use [this](https://github.com/louisowen6/NLP_bahasa_resources/blob/master/combined_slang_words.txt).
+
+For GPT-2, we advise you to pretrained it manually by using [Oscar Corpus](https://oscar-corpus.com/). After that, you can finetune it with the dataset that we have provided here. You should follow the paper how to transform the data when you do finetuning.
+
+We use [Huggingface](https://github.com/huggingface/transformers)'s off-the-shelf implementation to train the model.
+
+## Team
+
+1. Haryo Akbarianto Wibowo @ Kata.ai
+2. Tatag Aziz Prawiro @ Universitas Indonesia
+3. Muhammad Ihsan @ Bina Nusantara
+4. Alham Fikri Aji @ Kata.ai
+5. Radityo Eko Prasojo @ Kata.ai
+6. Rahmad Mahendra @ Universitas Indonesia
