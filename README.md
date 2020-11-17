@@ -4,7 +4,7 @@
 
 Implementation of "Semi-Supervised Low-Resource Style Transfer of Indonesian Informal to Formal Language with Iterative Forward-Translation"
 
-We improve the data where it is different than the data published in the paper. We expect you to find a different result when you run the code.
+We publish the data where it is different than the data published in the paper. We expect you to find a different result when you run the code.
 
 ## Description
 
