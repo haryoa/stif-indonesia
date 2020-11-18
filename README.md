@@ -2,9 +2,9 @@
 
 ![Paper](imgs/meme_stif.PNG)
 
-Implementation of "Semi-Supervised Low-Resource Style Transfer of Indonesian Informal to Formal Language with Iterative Forward-Translation"
+An implementation of ["Semi-Supervised Low-Resource Style Transfer of Indonesian Informal to Formal Language with Iterative Forward-Translation"](https://arxiv.org/abs/2011.03286v1).
 
-We publish the data where it is different than the data published in the paper. We expect you to find a different result when you run the code.
+You can also find Indonesian informal-formal parallel corpus in this repository.
 
 ## Description
 
@@ -24,7 +24,7 @@ You can access our paper below:
 
 We use the RELEASE 4.0 Ubuntu 17.04+ version which only works on the specified OS.
 
-If you use other moses, please change the `scripts/download_moses.sh`
+If you use a different Moses, please change the `scripts/download_moses.sh`
 
 ```bash
 curl http://www.statmt.org/moses/RELEASE-4.0/binaries/ubuntu-17.04.tgz -o moses.tgz
@@ -46,13 +46,13 @@ First, clone the repository
 git clone https://github.com/haryoa/stif-indonesia.git
 ```
 
-Then run the MOSES downloader. We use .sh, so use a CLI applications that can execute it. On the root project folder directory, do:
+Then run the MOSES downloader. We use .sh, so use a CLI application that can execute it. On the root project folder directory, do:
 
 ```bash
 bash scripts/download_moses.sh
 ```
 
-The script will download the moses toolkit and extract it by itself.
+The script will download the Moses toolkit and extract it by itself.
 
 ### Run Supervised Experiments
 
@@ -77,13 +77,13 @@ It will read the experiment config in `experiment-config/00002_default_semi_supe
 ## Output
 
 1. The training process will output the log of the experiment in `log.log`
-2. The output of the model will be produced in `output` folder
+2. The output of the model will be produced in the `output` folder
 
 ### Supervised output
 
-It will output `evaluation`, `lm` , and `train`. `evaluation` is the result of  prediction on the test set, `lm` is the output of the trained LM, and `train` is the produced model by the moses toolkit
+It will output `evaluation`, `lm` , and `train`. `evaluation` is the result of  prediction on the test set, `lm` is the output of the trained LM, and `train` is the produced model by the Moses toolkit
 
-### Semi supervised output
+### Semi-supervised output
 
 It will output `agg_data`, `best_model_dir`, and `produced_tgt_data`. `agg_data` is the result of the forward-iteration data synthesis. `best_model_dir` is the best model produced by the training process, and `produced_tgt_data` is the prediction output of the test set.
 
@@ -93,11 +93,11 @@ Please check the `log.log` file which is the output of the process.
 
 ## Additional Information
 
-If you want to replicate the dictionary-based method, you can use any informal - formal or slang dictionary in the internet.
+If you want to replicate the dictionary-based method, you can use any informal - formal or slang dictionary on the internet.
 
-For example, you can use [this](https://github.com/louisowen6/NLP_bahasa_resources/blob/master/combined_slang_words.txt).
+For example, you can use [this dictionary](https://github.com/louisowen6/NLP_bahasa_resources/blob/master/combined_slang_words.txt).
 
-For GPT-2, we advise you to pretrained it manually by using [Oscar Corpus](https://oscar-corpus.com/). After that, you can finetune it with the dataset that we have provided here. You should follow the paper how to transform the data when you do finetuning.
+If you want to replicate our GPT-2 experiment, you can use a pre-trained Indonesian GPT-2 such as (this one](https://huggingface.co/cahya/gpt2-large-indonesian-522M), or train it by yourself by using [Oscar Corpus](https://oscar-corpus.com/). After that, you can finetune it with the dataset that we have provided here. You should follow the paper on how to transform the data when you do the finetuning.
 
 We use [Huggingface](https://github.com/huggingface/transformers)'s off-the-shelf implementation to train the model.
 
