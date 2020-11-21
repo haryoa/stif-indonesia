@@ -260,7 +260,7 @@ class MosesSMTModel:
             logger.warning(str(out_lm_dir / 'blm') + " is exist")
         data_train_pth = str(train_data_dir / (self.hparams['data_train'] + self.hparams['target_file_type']))
 
-        subprocess.run([f"{MOSES_IMPLZ} -o {self.hparams['moses_args']['moses_ngram']}"
+        subprocess.run([f"{MOSES_IMPLZ} -S 20% -o {self.hparams['moses_args']['moses_ngram']}"
                         f" < {data_train_pth} "
                         f" > {arpa_out} "],
                        shell=True)
