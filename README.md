@@ -20,6 +20,8 @@ You can access our paper below:
 
 [Semi-Supervised Low-Resource Style Transfer of Indonesian Informal to Formal Language with Iterative Forward-Translation (IALP 2020)](https://arxiv.org/abs/2011.03286v1)
 
+Medium Article: [Mengubah Bahasa Indonesia Informal Menjadi Baku Menggunakan Kecerdasan Buatan](https://medium.com/kata-engineering/mengubah-bahasa-indonesia-informal-menjadi-baku-menggunakan-kecerdasan-buatan-4c6317b00ea5) (In Indonesian)
+
 ## Requirements
 
 We use the RELEASE 4.0 Ubuntu 17.04+ version which only works on the specified OS.
