@@ -10,7 +10,7 @@ You can also find Indonesian informal-formal parallel corpus in this repository.
 
 We were researching transforming a sentence from informal to its formal form. Our work addresses a style-transfer from informal to formal  Indonesian as a low-resource **machine translation**  problem. We benchmark several strategies to perform the style transfer.
 
-In this repository, we provide the Phrase-Based Statistical Machine Translation, which has the highest result in our experiment.
+In this repository, we provide the Phrase-Based Statistical Machine Translation, which has the highest result in our experiment. Note that, our data is extremely low-resource and domain-specific (Customer Service domain). Therefore, the system might not be robust towards out-of-domain input. Our future work includes exploring more robust style transfer. Stay tuned!
 
 ## Paper
 
