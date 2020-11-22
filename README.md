@@ -26,17 +26,7 @@ Medium Article: [Mengubah Bahasa Indonesia Informal Menjadi Baku Menggunakan Kec
 
 We use the RELEASE 4.0 Ubuntu 17.04+ version which only works on the specified OS.
 
-If you use a different Moses, please change the `scripts/download_moses.sh`
-
-```bash
-curl http://www.statmt.org/moses/RELEASE-4.0/binaries/ubuntu-17.04.tgz -o moses.tgz
-```
-
-to
-
-```bash
-curl [OTHER MOSES URL] -o moses.tgz
-```
+We haven't tested it on other OS (e.g.: OS X and Windows). If you want to run the source code, use Ubuntu 17.04+. If you use windows, we advise you to use the WSL-2 to run the code.
 
 In this experiment, we wrap the MOSES code by using Python's `subprocess`. So Python installation is necessary. The system is tested on Python 3.9. We recommend it to install with `miniconda`. You can install it by following this link: https://docs.conda.io/en/latest/miniconda.html
 
