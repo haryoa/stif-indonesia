@@ -89,7 +89,7 @@ If you want to replicate the dictionary-based method, you can use any informal -
 
 For example, you can use [this dictionary](https://github.com/louisowen6/NLP_bahasa_resources/blob/master/combined_slang_words.txt).
 
-If you want to replicate our GPT-2 experiment, you can use a pre-trained Indonesian GPT-2 such as (this one)(https://huggingface.co/cahya/gpt2-large-indonesian-522M), or train it by yourself by using [Oscar Corpus](https://oscar-corpus.com/). After that, you can finetune it with the dataset that we have provided here. You should follow the paper on how to transform the data when you do the finetuning.
+If you want to replicate our GPT-2 experiment, you can use a pre-trained Indonesian GPT-2 such as [this one](https://huggingface.co/cahya/gpt2-large-indonesian-522M), or train it by yourself by using [Oscar Corpus](https://oscar-corpus.com/). After that, you can finetune it with the dataset that we have provided here. You should follow the paper on how to transform the data when you do the finetuning.
 
 We use [Huggingface](https://github.com/huggingface/transformers)'s off-the-shelf implementation to train the model.
 
