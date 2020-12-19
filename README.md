@@ -46,6 +46,22 @@ bash scripts/download_moses.sh
 
 The script will download the Moses toolkit and extract it by itself.
 
+### Install required python packages
+
+Before running the program you have to install some prerequisites packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Alternatively, if you prefer to use `pipenv` instead you can run:
+
+```bash
+pipenv install
+```
+
+__NOTE:__ If you prefer to use `pipenv` you should preceed the command with `pipenv run`. E.g: `pipenv run python -m stif_indonesia --exp-scenario supervised`
+
 ### Run Supervised Experiments
 
 To run the supervised one, do:
